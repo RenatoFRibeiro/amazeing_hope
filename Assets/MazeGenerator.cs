@@ -6,14 +6,12 @@ using UnityEngine;
 public class MazeGenerator : MonoBehaviour
 {
     [SerializeField] MazeNode nodePrefab;
-    [SerializeField] GameObject playerObjectPrefab; // Add your PlayerObject prefab here
     [SerializeField] Vector2Int mazeSize;
     [SerializeField] float nodeSize;
 
     private void Start()
     {
         GenerateMazeInstant(mazeSize);
-        SpawnPlayerObject(); // Call the new method to spawn the PlayerObject
         //StartCoroutine(GenerateMaze(mazeSize));
     }
 
@@ -154,13 +152,6 @@ public class MazeGenerator : MonoBehaviour
                 currentPath.RemoveAt(currentPath.Count - 1);
             }
         }
-    }
-
-     void SpawnPlayerObject()
-    {
-        // Instantiate the PlayerObject prefab at a random position within the maze
-        Vector3 playerObjectPosition = GetRandomMazePosition();
-        Instantiate(playerObjectPrefab, playerObjectPosition, Quaternion.identity);
     }
 
      Vector3 GetRandomMazePosition()
