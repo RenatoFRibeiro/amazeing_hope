@@ -16,10 +16,4 @@ public class PlayerSpawner : MonoBehaviour
     {
         Instantiate(player, new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ)), Quaternion.identity);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
