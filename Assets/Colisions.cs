@@ -15,6 +15,10 @@ public class SoundColisions : MonoBehaviour
         {
             print("Que se me apaga a luz!");
             //GetComponent<AudioSource>().Play();
+        }else if (other.gameObject.tag == "Win_event")
+        {
+            print("CAPUT!");
+            //GetComponent<AudioSource>().Play();
         }
     }
 }

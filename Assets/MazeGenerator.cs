@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+    public GameObject Win_event;
     [SerializeField] MazeNode nodePrefab;
     [SerializeField] Vector2Int mazeSize;
     [SerializeField] float nodeSize;
@@ -39,21 +40,29 @@ public class MazeGenerator : MonoBehaviour
                 // Right side
                 int openingY = Random.Range(0, size.y);
                 nodes[openingY].RemoveWall(1);
+                // Instantiate WinCollider game object at the position of the randomly chosen node
+                Instantiate(Win_event, nodes[openingY].transform.position, Quaternion.identity);
                 break;
             case 2:
                 // Left side
                 openingY = Random.Range(0, size.y);
                 nodes[(size.x - 1) * size.y + openingY].RemoveWall(0);
+                // Instantiate WinCollider game object at the position of the randomly chosen node
+                Instantiate(Win_event, nodes[(size.x - 1) * size.y + openingY].transform.position, Quaternion.identity);
                 break;
             case 3:
                 // Top side
                 int openingX = Random.Range(0, size.x);
                 nodes[openingX * size.y].RemoveWall(3);
+                // Instantiate WinCollider game object at the position of the randomly chosen node
+                Instantiate(Win_event, nodes[openingX * size.y].transform.position, Quaternion.identity);
                 break;
             case 4:
                 // Bottom side
                 openingX = Random.Range(0, size.x);
                 nodes[(openingX + 1) * size.y - 1].RemoveWall(2);
+                // Instantiate WinCollider game object at the position of the randomly chosen node
+                Instantiate(Win_event, nodes[(openingX + 1) * size.y - 1].transform.position, Quaternion.identity);
                 break;
         }
 
@@ -151,31 +160,6 @@ public class MazeGenerator : MonoBehaviour
                 currentPath[currentPath.Count - 1].SetState(NodeState.Completed);
                 currentPath.RemoveAt(currentPath.Count - 1);
             }
-        }
-    }
-
-     Vector3 GetRandomMazePosition()
-    {
-        MazeNode[] allNodes = transform.GetComponentsInChildren<MazeNode>();
-        List<MazeNode> openNodes = new List<MazeNode>();
-
-        foreach (var node in allNodes)
-        {
-            if (!node.HasAnyWall())
-            {
-                openNodes.Add(node);
-            }
-        }
-
-        if (openNodes.Count > 0)
-        {
-            MazeNode randomNode = openNodes[Random.Range(0, openNodes.Count)];
-            return randomNode.transform.position;
-        }
-        else
-        {
-            Debug.LogError("No open nodes found for object spawn!");
-            return Vector3.zero;
         }
     }
 }

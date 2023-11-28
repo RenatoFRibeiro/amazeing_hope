@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sound_event
   - Battery_event
+  - Win_event
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,8 @@ guid: b60c5200d4a563644bef51a77e4fd077
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Battery_event: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
