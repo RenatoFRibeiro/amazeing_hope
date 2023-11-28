@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &217686734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 217686736}
+  - component: {fileID: 217686735}
+  m_Layer: 0
+  m_Name: Battery_eventSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &217686735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217686734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b60c5200d4a563644bef51a77e4fd077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battery_event: {fileID: 8347481411204713307, guid: 2f855c1121dbbe84bbb03a312db572bc, type: 3}
+  minX: -10
+  maxX: 10
+  minZ: -10
+  maxZ: 10
+--- !u!4 &217686736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217686734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.593206, y: 1.1548948, z: 1.7852163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &335141997
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,8 +296,6 @@ MonoBehaviour:
   player: {fileID: 5049773966032522545, guid: bd5ce4d1c8dfbff44b76c03eb5b0f094, type: 3}
   minX: -10
   maxX: 10
-  minY: -0.45
-  maxY: -0.45
   minZ: -10
   maxZ: 10
 --- !u!4 &1159405654
@@ -465,3 +512,4 @@ SceneRoots:
   - {fileID: 1354254563}
   - {fileID: 1159405654}
   - {fileID: 1781011382}
+  - {fileID: 217686736}

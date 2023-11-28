@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 238100330668296160}
   - component: {fileID: 2758198460028034988}
   m_Layer: 0
-  m_Name: Sound_event
-  m_TagString: Sound_event
+  m_Name: Battery_event
+  m_TagString: Battery_event
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sound_event
+  - Battery_event
   layers:
   - Default
   - TransparentFX
