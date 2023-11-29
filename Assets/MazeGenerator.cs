@@ -9,6 +9,7 @@ public class MazeGenerator : MonoBehaviour
     [SerializeField] MazeNode nodePrefab;
     [SerializeField] Vector2Int mazeSize;
     [SerializeField] float nodeSize;
+    public int mazeVar;
 
     private void Start()
     {
@@ -16,10 +17,10 @@ public class MazeGenerator : MonoBehaviour
         //StartCoroutine(GenerateMaze(mazeSize));
     }
 
-    void GenerateMazeInstant(Vector2Int size)
+    public void GenerateMazeInstant(Vector2Int size)
     {
         List<MazeNode> nodes = new List<MazeNode>();
-
+        mazeVar = size.x;
         // Create nodes
         for (int x = 0; x < size.x; x++)
         {

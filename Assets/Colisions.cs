@@ -21,4 +21,21 @@ public class SoundColisions : MonoBehaviour
             //GetComponent<AudioSource>().Play();
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Sound_event")
+        {
+            //print("AI JESUS!");
+            //GetComponent<AudioSource>().Play();
+        }else if (other.gameObject.tag == "Battery_event")
+        {
+            Destroy(other.gameObject);
+            print("Pilha com os cucos");
+        }else if (other.gameObject.tag == "Win_event")
+        {
+            print("WIN!");
+            //GetComponent<AudioSource>().Play();
+        }
+    }
 }
