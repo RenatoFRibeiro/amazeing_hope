@@ -14,7 +14,6 @@ public class MazeGenerator : MonoBehaviour
     private void Start()
     {
         GenerateMazeInstant(mazeSize);
-        //StartCoroutine(GenerateMaze(mazeSize));
     }
 
     public void GenerateMazeInstant(Vector2Int size)
