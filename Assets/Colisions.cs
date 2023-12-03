@@ -6,11 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SoundColisions : MonoBehaviour
 {
-    public CameraFade cameraFade;
     public void Start()
     {
         // Automatically start the fade
-        cameraFade = GameObject.Find("MainCamera").GetComponent<CameraFade>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -33,13 +31,12 @@ public class SoundColisions : MonoBehaviour
     {
         if (other.gameObject.tag == "Sound_event")
         {
-            //print("AI JESUS!");
+            print("AI JESUS!");
             //GetComponent<AudioSource>().Play();
         }else if (other.gameObject.tag == "Battery_event")
         {
             Destroy(other.gameObject);
             print("Pilha com os cucos");
-            cameraFade.ResetFadeAlpha();
 
         }else if (other.gameObject.tag == "Win_event")
         {
