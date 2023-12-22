@@ -10,11 +10,6 @@ public class Main_menu : MonoBehaviour
         Debug.Log("Play!");
         SceneManager.LoadScene("Level1");
     }
-    public void Credits()
-    {
-        Debug.Log("Credits!");
-        SceneManager.LoadScene("Credits");
-    }
     public void QuitGame()
     {
         Debug.Log("Quit!");
