@@ -10,6 +10,10 @@ TagManager:
   - Node
   - roof
   - camerafader
+  - Hell
+  - audioSourceB
+  - audioSourceE
+  - audioSourceW
   layers:
   - Default
   - TransparentFX
