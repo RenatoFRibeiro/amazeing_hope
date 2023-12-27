@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 
 public class SoundColisions : MonoBehaviour
@@ -19,10 +20,12 @@ public class SoundColisions : MonoBehaviour
         if (other.gameObject.tag == "Sound_event")
         {
             print("Sound event!");
+            //add hope points
             audioSourceB.PlayOneShot(audioClipE, volume);
         }else if (other.gameObject.tag == "Battery_event")
         {
             print("Battery event!");
+            //add fade time
             audioSourceB.PlayOneShot(audioClipB, volume);
         }else if (other.gameObject.tag == "Win_event")
         {
@@ -40,13 +43,16 @@ public class SoundColisions : MonoBehaviour
     {
         if (other.gameObject.tag == "Sound_event")
         {
-            //...?
+            Destroy(other.gameObject);
         }else if (other.gameObject.tag == "Battery_event")
         {
             Destroy(other.gameObject);
         }else if (other.gameObject.tag == "Win_event")
         {
             print("Level UP!");
+            Destroy(other.gameObject);
+            //wait one second
+            Thread.Sleep(1000);
             SceneManager.LoadScene("Level2");
         }
     }
