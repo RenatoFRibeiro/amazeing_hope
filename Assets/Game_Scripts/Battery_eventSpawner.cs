@@ -17,7 +17,7 @@ public class Battery_eventSpawner : MonoBehaviour
     {
         size = mazeGenerator.mazeVar * 2;
         for (int i = 0; i < size; i++){
-            Instantiate(Battery_event, new Vector3(Random.Range(minX, maxX), 0, Random.Range(minZ, maxZ)), Quaternion.identity);
+            Instantiate(Battery_event, new Vector3(Random.Range(minX-1, maxX-1), 0, Random.Range(minZ-1, maxZ-1)), Quaternion.identity);
         }
     }
 }

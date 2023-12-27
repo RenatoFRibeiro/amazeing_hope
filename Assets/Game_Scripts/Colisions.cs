@@ -48,11 +48,10 @@ public class SoundColisions : MonoBehaviour
         {
             Destroy(other.gameObject);
         }else if (other.gameObject.tag == "Win_event")
-        {
+        { 
             print("Level UP!");
-            Destroy(other.gameObject);
             //wait one second
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
             SceneManager.LoadScene("Level2");
         }
     }
