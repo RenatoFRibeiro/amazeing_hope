@@ -3,7 +3,12 @@ guid: fa4ce659e946b6a4e8c0ef57306e5501
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cameraFaderscript: {fileID: 8371257887661003159, guid: 0e62b39e479fafa4e8f73a47db4db689, type: 3}
+  - audioSourceB: {instanceID: 0}
+  - audioClipB: {instanceID: 0}
+  - audioClipE: {instanceID: 0}
+  - audioClipW: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

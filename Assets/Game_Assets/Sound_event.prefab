@@ -155,7 +155,7 @@ MonoBehaviour:
   rotationAngle: {x: 0, y: 90, z: 0}
   rotationSpeed: 1
   floatSpeed: 0.01
-  floatRate: 0.5
+  floatRate: 0.3
   startScale: {x: 0, y: 0, z: 0}
   endScale: {x: 0, y: 0, z: 0}
   scaleSpeed: 0

@@ -5,6 +5,7 @@ using System.Threading;
 
 public class SoundColisions : MonoBehaviour
 {
+    public CameraFade cameraFaderscript;
     public AudioSource audioSourceB;
     public AudioClip audioClipB;
     public AudioClip audioClipE;
@@ -13,19 +14,20 @@ public class SoundColisions : MonoBehaviour
     public void Start()
     {
         audioSourceB = GameObject.FindGameObjectWithTag("audioSourceB").GetComponent<AudioSource>();
-        // Automatically start the fade
+        cameraFaderscript = GameObject.FindGameObjectWithTag("camerafade").GetComponent<CameraFade>();
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Sound_event")
         {
-            print("Sound event!");
+            print("Hope event!");
             //add hope points
             audioSourceB.PlayOneShot(audioClipE, volume);
         }else if (other.gameObject.tag == "Battery_event")
         {
             print("Battery event!");
             //add fade time
+            cameraFaderscript.ResetFadeAlpha();
             audioSourceB.PlayOneShot(audioClipB, volume);
         }else if (other.gameObject.tag == "Win_event")
         {
