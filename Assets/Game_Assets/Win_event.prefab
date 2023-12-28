@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAnimated: 1
   isRotating: 1
-  isFloating: 1
+  isFloating: 0
   isScaling: 0
   rotationAngle: {x: 0, y: 90, z: 0}
   rotationSpeed: 1

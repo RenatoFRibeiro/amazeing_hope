@@ -12,7 +12,7 @@ public class CameraFade : MonoBehaviour
     public Texture2D texture;
     public int direction = 0;
     public float time = 0f;
-
+    private int counter;
     public void Start()
     {
         // Automatically start the fade
@@ -22,7 +22,14 @@ public class CameraFade : MonoBehaviour
 
     public void Update()
     {
-        // No need for user input in this version
+        if (alpha == 1f){
+            counter += 1;
+            if (counter >= 10){
+                Application.Quit();
+                print("DEAD!");
+            }
+            print("Pitch Black! Dying soon!");
+        }
     }
 
     public void OnGUI()
@@ -46,10 +53,8 @@ public class CameraFade : MonoBehaviour
         }
     }
 
-    // Method to automatically start the fade
     public void AutoStartFade()
     {
-        // Set initial values to start the fade
         alpha = startFadedOut ? 1f : 0f;
         time = startFadedOut ? 0f : 1f;
         direction = startFadedOut ? 1 : -1;
@@ -58,7 +63,6 @@ public class CameraFade : MonoBehaviour
     public void ResetFadeAlpha()
     {
         print("Reseting alpha!");
-        // Reset fade alpha
         alpha = 0f;
         time = 1f;
         direction = -1;

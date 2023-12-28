@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // Add this using directive
 using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum NodeState
@@ -37,15 +35,12 @@ public class MazeNode : MonoBehaviour
         switch (state)
         {
             case NodeState.Available:
-                print("No need.");
                 //floor.material.color = Color.white;
                 break;
             case NodeState.Current:
-                print("No need.");
                 //floor.material.color = Color.yellow;
                 break;
             case NodeState.Completed:
-                print("No need.");
                 //floor.material.color = Color.blue;
                 break;
         }
