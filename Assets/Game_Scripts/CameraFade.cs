@@ -25,7 +25,7 @@ public class CameraFade : MonoBehaviour
         if (alpha == 1f){
             counter += 1;
             if (counter >= 10){
-                Application.Quit();
+                GameOver();
                 print("DEAD!");
             }
             print("Pitch Black! Dying soon!");
@@ -50,6 +50,17 @@ public class CameraFade : MonoBehaviour
             {
                 direction = 0;
             }
+        }
+    }
+
+    public void GameOver(){
+        alpha = 0f;
+        time = 1f;
+        direction = -1;
+        try {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        } catch (System.Exception e) {
+            Debug.LogError("Error loading scene: " + e.Message);
         }
     }
 

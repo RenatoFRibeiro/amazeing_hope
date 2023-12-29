@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused = false;
+    public Text scorelabel;
+    public Colisions colisionsscript;
     void Start()
     {
+        colisionsscript = gameObject.GetComponent("colisionsgameobject").GetComponent<Colisions>();
         pauseMenu.SetActive(false);
     }
 
@@ -46,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         print("Return to Main Menu");
         Time.timeScale = 1f;
         isPaused = false;
+        Colisions.score = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
     public void QuitGame()

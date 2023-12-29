@@ -39,9 +39,7 @@ public class Colisions : MonoBehaviour
         }else if (other.gameObject.tag == "Hell")
         {
             print("DIED FROM FALLING!");
-            Application.Quit();
-            score = 0;
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameOver");
         }
     }
 
