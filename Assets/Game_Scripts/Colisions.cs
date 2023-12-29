@@ -36,6 +36,10 @@ public class Colisions : MonoBehaviour
         {
             print("Win event!");
             audioSourceB.PlayOneShot(audioClipW, volume);
+        }else if (other.gameObject.tag == "winevent2")
+        {
+            print("You won the game!");
+            audioSourceB.PlayOneShot(audioClipW, volume);
         }else if (other.gameObject.tag == "Hell")
         {
             print("DIED FROM FALLING!");
@@ -58,6 +62,10 @@ public class Colisions : MonoBehaviour
             //wait one second
             //Thread.Sleep(1000);
             SceneManager.LoadScene("Level2");
+        }else if (other.gameObject.tag == "winevent2")
+        { 
+            score += 100;
+            SceneManager.LoadScene("WinGame");
         }
     }
 

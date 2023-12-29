@@ -372,6 +372,7 @@ MonoBehaviour:
   maxX: 10
   minZ: -10
   maxZ: 10
+  multiplier: 2
 --- !u!4 &217686736
 Transform:
   m_ObjectHideFlags: 0
@@ -1685,6 +1686,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 365336432}
+  scorelabel: {fileID: 0}
+  colisionsscript: {fileID: 0}
 --- !u!1001 &1366443458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2100,6 +2103,7 @@ MonoBehaviour:
   maxX: 10
   minZ: -10
   maxZ: 10
+  multiplier: 15
 --- !u!4 &1781011382
 Transform:
   m_ObjectHideFlags: 0

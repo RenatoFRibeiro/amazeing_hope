@@ -6,7 +6,6 @@ public class MazeGenerator : MonoBehaviour
     public GameObject Win_event;
     [SerializeField] MazeNode nodePrefab;
     [SerializeField] Vector2Int mazeSize;
-    [SerializeField] float nodeSize;
     public int mazeVar;
 
     private void Start()

@@ -16,6 +16,7 @@ TagManager:
   - audioSourceW
   - camerafade
   - colisionsgameobject
+  - winevent2
   layers:
   - Default
   - TransparentFX
