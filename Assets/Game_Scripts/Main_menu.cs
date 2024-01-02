@@ -7,6 +7,8 @@ public class Main_menu : MonoBehaviour
     {
         Debug.Log("Play!");
         SceneManager.LoadScene("Level1");
+        Time.timeScale = 1f;
+        isPaused = false;
     }
     public void QuitGame()
     {
