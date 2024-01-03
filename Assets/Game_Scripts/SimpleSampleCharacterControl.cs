@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SimpleInputNamespace;
 using UnityEngine;
 
 public class SimpleSampleCharacterControl : MonoBehaviour
@@ -8,6 +9,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         Tank, Direct
     }
 
+    [SerializeField] public AxisInputUIArrows m_inputUIArrows;
     [SerializeField] private float m_moveSpeed = 4;
     [SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 2;
@@ -35,11 +37,13 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private bool m_isGrounded;
 
     private List<Collider> m_collisions = new List<Collider>();
-
+    
     private void Awake()
     {
         if (!m_animator) { gameObject.GetComponent<Animator>(); }
         if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+        // Add the following line to get a reference to AxisInputUIArrows
+        m_inputUIArrows = FindObjectOfType<AxisInputUIArrows>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -130,8 +134,8 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void TankUpdate()
     {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
+        float v = m_inputUIArrows.Value.y; // Use the vertical value from AxisInputUIArrows
+        float h = m_inputUIArrows.Value.x; // Use the horizontal value from AxisInputUIArrows
 
         bool walk = Input.GetKey(KeyCode.LeftShift);
 
@@ -158,9 +162,10 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void DirectUpdate()
     {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
+        float v = m_inputUIArrows.Value.y; // Use the vertical value from AxisInputUIArrows
+        float h = m_inputUIArrows.Value.x; // Use the horizontal value from AxisInputUIArrows
 
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             v *= m_walkScale;
